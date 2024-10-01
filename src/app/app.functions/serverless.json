@@ -1,0 +1,8 @@
+{
+  "appFunctions": {
+    "myFunc": {
+      "file": "create-ticket.js",
+      "secrets": ["HAPIKEY"]
+    }
+  }
+}

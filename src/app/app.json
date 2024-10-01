@@ -1,0 +1,19 @@
+{
+  "name": "Deal Form to Create Ticket",
+  "description": "Enter properties to create an associated Ticket",
+  "uid": "deal_form_to_create_ticket",
+  "scopes": ["crm.objects.contacts.read", "crm.objects.contacts.write", "tickets"],
+  "public": false,
+  "extensions": {
+    "crm": {
+      "cards": [
+        {
+          "file": "extensions/deal-form.json"
+        }
+      ]
+    }
+  },
+  "webhooks": {
+    "file": "./webhooks/webhooks.json"
+  }
+}

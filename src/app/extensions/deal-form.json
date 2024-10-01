@@ -1,0 +1,12 @@
+{
+  "type": "crm-card",
+  "data": {
+    "title": "Deal Form to Create Ticket",
+    "uid": "deal_form_to_create_ticket",
+    "location": "crm.record.tab",
+    "module": {
+      "file": "DealForm.jsx"
+    },
+    "objectTypes": [{ "name": "deals" }]
+  }
+}
