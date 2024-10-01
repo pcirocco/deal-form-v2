@@ -8,7 +8,7 @@ exports.main = async (context, sendResponse) => {
 
   const formattedResult = formatFormData(formData);
 
-  const accessToken =  process.env.HAPIKEY//'pat-na1-b7c360c2-a43b-46c8-8e66-27a040ef0379' //process.env.PRIVATE_APP_ACCESS_TOKEN;  // Your private app's access token
+  const accessToken =  process.env.HAPIKEY//process.env.PRIVATE_APP_ACCESS_TOKEN;  // Your private app's access token
 
   // Prepare ticket data
   const ticketData = {
