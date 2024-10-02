@@ -3,6 +3,10 @@
     "myFunc": {
       "file": "create-ticket.js",
       "secrets": ["HAPIKEY"]
+    },
+    "saveProps": {
+      "file": "save-props.js",
+      "secrets": ["HAPIKEY"]
     }
   }
 }
