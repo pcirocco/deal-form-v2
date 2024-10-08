@@ -13,7 +13,8 @@ hubspot.extend(({ actions, context, runServerlessFunction }) => (
 const DealMultiStepForm = ({ runServerless, context, fetchProperties, sendAlert }) => {
   const [step, setStep] = useState(0);  // Track the current step of the form
   const [submitted, setSubmitted] = useState(false);
-  const [dealId, setDealId] = useState('');  
+  const [dealId, setDealId] = useState('');
+  const [dealName, setDealName] = useState('');
   const [isTicketCreated, setIsTicketCreated] = useState(false);
   const [formData, setFormData] = useState({
     additional_features___winpak: '',
@@ -73,7 +74,7 @@ const DealMultiStepForm = ({ runServerless, context, fetchProperties, sendAlert 
       try {
         const serverlessResult = await runServerless({
           name: 'myFunc',  // Serverless function name
-          parameters: { dealId, formData } 
+          parameters: { dealId, formData, dealName } 
         });
         console.log('The full serverless result is: ', serverlessResult);
         if (serverlessResult.status === 'SUCCESS') {
@@ -126,8 +127,9 @@ const DealMultiStepForm = ({ runServerless, context, fetchProperties, sendAlert 
 
   // Fetch the deal ID once (remove dealId from dependencies)
   useEffect(() => {
-    fetchProperties(['hs_object_id']).then((properties) => {
+    fetchProperties(['hs_object_id', 'dealname']).then((properties) => {
       setDealId(properties.hs_object_id);
+      setDealName(properties.dealname);
     });
   }, []);  // Only run once when component mounts
 
